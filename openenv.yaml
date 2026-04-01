@@ -1,0 +1,47 @@
+name: kitchen-env
+version: "1.0.0"
+description: >
+  A real-world OpenEnv-compliant reinforcement learning environment that
+  simulates restaurant kitchen food-prep management. An AI agent decides
+  how many portions of each dish to prepare each hour, when and how much
+  to reorder ingredients, and how to balance waste reduction against
+  stockout avoidance — modelling a genuine operational challenge that
+  restaurant managers face every day.
+author: vishweshreddy007
+tags:
+  - openenv
+  - restaurant
+  - food-prep
+  - inventory-management
+  - real-world
+tasks:
+  - id: task1_stock_check
+    name: "Stock Check (Easy)"
+    difficulty: easy
+    description: >
+      Single-step task. The agent receives the current inventory and a
+      demand forecast, then decides how many portions of each dish to
+      prepare. Grader scores 0.0–1.0 based on how close the agent's
+      prep quantities are to actual realised demand. Fixed seed=42 for
+      full determinism.
+
+  - id: task2_waste_minimizer
+    name: "Lunch Service Waste Minimizer (Medium)"
+    difficulty: medium
+    description: >
+      6-step lunch episode (hours 11–14, then two additional steps).
+      The agent manages prep quantities and ingredient reorders across
+      the full lunch service. Grader combines a waste score
+      (1 − waste_ratio) and a stockout score (1 − stockout_ratio),
+      weighted 50/50. Fixed seed=7.
+
+  - id: task3_full_shift
+    name: "Full Dinner Shift with Spikes (Hard)"
+    difficulty: hard
+    description: >
+      8-step dinner episode (hours 17–20 repeated). Includes 2 random
+      demand spike events (×2.5 multiplier at hours 19 & 20) and 1
+      supplier-delay event (orders arrive 2 steps late instead of 1).
+      Grader scores revenue efficiency (40%), waste efficiency (30%),
+      and stockout avoidance (30%). Requires genuine multi-step
+      reasoning and hedging under uncertainty. Fixed seed=13.
