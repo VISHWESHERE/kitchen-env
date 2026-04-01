@@ -1,7 +1,7 @@
 ---
 title: Kitchen Env
 emoji: 🍳
-colorFrom: orange
+colorFrom: yellow
 colorTo: green
 sdk: docker
 pinned: false
