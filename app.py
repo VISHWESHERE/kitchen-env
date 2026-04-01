@@ -80,6 +80,28 @@ class RunTaskRequest(BaseModel):
 # ---------------------------------------------------------------------------
 
 
+@app.get("/", tags=["system"])
+def root() -> Dict[str, Any]:
+    """
+    Root endpoint — API information and available endpoints.
+    """
+    return {
+        "name": "Kitchen Env — OpenEnv API",
+        "version": "1.0.0",
+        "description": "Restaurant kitchen food-prep management RL environment",
+        "endpoints": {
+            "health": "GET /health — Health check",
+            "reset": "POST /reset?seed=42 — Reset environment",
+            "step": "POST /step — Take action step",
+            "state": "GET /state — Get current state",
+            "tasks": "POST /tasks — List available tasks",
+            "run_task": "POST /run_task/{task_id} — Run a specific task"
+        },
+        "docs": "/docs",
+        "openapi": "/openapi.json"
+    }
+
+
 @app.get("/health", tags=["system"])
 def health() -> Dict[str, str]:
     """Liveness check. Required by OpenEnv and HF Spaces."""
