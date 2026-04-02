@@ -1,0 +1,47 @@
+[project]
+name = "kitchen-env"
+version = "1.0.0"
+description = "A real-world OpenEnv-compliant reinforcement learning environment that simulates restaurant kitchen food-prep management"
+authors = [
+    {name = "vishweshreddy007", email = "vishweshreddy007@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+keywords = ["openenv", "reinforcement-learning", "restaurant", "kitchen", "inventory-management"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.29.0",
+    "pydantic>=2.0.0",
+    "openai>=1.0.0",
+    "numpy>=1.26.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://huggingface.co/spaces/vishweshreddy007/kitchen-env"
+Repository = "https://github.com/VISHWESHERE/kitchen-env"
+Documentation = "https://github.com/VISHWESHERE/kitchen-env/blob/main/README.md"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["env", "tasks"]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.yml"]
