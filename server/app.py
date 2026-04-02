@@ -237,7 +237,14 @@ def run_task(task_id: str, body: Optional[RunTaskRequest] = None) -> Dict[str, A
 # Entry point
 # ---------------------------------------------------------------------------
 
-if __name__ == "__main__":
+def main():
+    """
+    Main entry point for the server.
+    Starts the FastAPI application with uvicorn.
+    """
     import uvicorn
-
     uvicorn.run(app, host="0.0.0.0", port=7860)
+
+
+if __name__ == "__main__":
+    main()
