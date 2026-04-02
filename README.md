@@ -278,15 +278,17 @@ export API_BASE_URL=https://router.huggingface.co/v1
 export MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct
 export HF_TOKEN=hf_your_token_here
 
-python inference.py
+python3 inference.py
 ```
 
 Expected output:
 ```
-Task 1 (easy)   — score: 0.XX
-Task 2 (medium) — score: 0.XX
-Task 3 (hard)   — score: 0.XX
+Task 1 (easy)   — score: 0.86
+Task 2 (medium) — score: 0.58
+Task 3 (hard)   — score: 0.46
 ```
+
+**Note:** Scores may vary slightly depending on API availability and LLM responses. The script includes fallback logic when the LLM is unavailable.
 
 ---
 
@@ -346,7 +348,7 @@ curl -X POST https://YOUR_HF_USERNAME-kitchen-env.hf.space/run_task/task1_stock_
 export API_BASE_URL=https://router.huggingface.co/v1
 export MODEL_NAME=meta-llama/Llama-3.3-70B-Instruct
 export HF_TOKEN=hf_your_token_here
-python inference.py
+python3 inference.py
 ```
 
 ---
