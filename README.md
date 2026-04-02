@@ -322,12 +322,12 @@ git init
 git add .
 git commit -m "initial submission"
 huggingface-cli repo create kitchen-env --type space --space-sdk docker
-git remote add origin https://huggingface.co/spaces/YOUR_HF_USERNAME/kitchen-env
+git remote add origin https://huggingface.co/spaces/vishweshreddy007/kitchen-env
 git push origin main
 ```
 
 ### Step 3 — Set secrets in HF Space settings UI
-Go to: `huggingface.co/spaces/YOUR_HF_USERNAME/kitchen-env/settings`
+Go to: `huggingface.co/spaces/vishweshreddy007/kitchen-env/settings`
 
 Add these under **"Variables and Secrets"**:
 ```
@@ -338,9 +338,9 @@ HF_TOKEN     = hf_your_token_here
 
 ### Step 4 — Test deployment with curl
 ```bash
-curl https://YOUR_HF_USERNAME-kitchen-env.hf.space/health
-curl -X POST https://YOUR_HF_USERNAME-kitchen-env.hf.space/reset
-curl -X POST https://YOUR_HF_USERNAME-kitchen-env.hf.space/run_task/task1_stock_check
+curl https://vishweshreddy007-kitchen-env.hf.space/health
+curl -X POST https://vishweshreddy007-kitchen-env.hf.space/reset
+curl -X POST https://vishweshreddy007-kitchen-env.hf.space/run_task/task1_stock_check
 ```
 
 ### Step 5 — Run inference.py locally before submitting
